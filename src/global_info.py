@@ -11,3 +11,11 @@ users = {
     "willt": "oneweek",
     "admin": "admin"
 }
+
+b2b_accounts = {}
+
+b2b_orders = {}
+
+b2c_accounts = {}
+
+b2c_orders = {}

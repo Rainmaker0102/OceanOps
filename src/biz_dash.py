@@ -1,7 +1,7 @@
 # biz_dash
 # This file is what displays the dashboard for the business management system
 from global_info import business_name, FUNC_NOT_SUPPORTED
-
+from load import fileLoader
 
 
 class DashboardDisplay():
@@ -16,10 +16,11 @@ class DashboardDisplay():
             selection = input("[Q]uit, [L]oad data files, View [A]ccounts, View [O]rders: ").upper()
             match selection:
                 case "Q":
-                    print("Thank you for using OceanOps. Have a nice day!")
-                    quit()
+                    print("Exiting the Dashboard")
+                    break
                 case "L":
-                    print("Load functionality: " + FUNC_NOT_SUPPORTED + "\n")
+                    loader = fileLoader()
+                    loader.run()
                 case "A":
                     print("Account functionality: " + FUNC_NOT_SUPPORTED + "\n")
                 case "O":

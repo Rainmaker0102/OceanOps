@@ -18,14 +18,15 @@ class Login():
             username = input("Username: ")
             if username.upper() == "Q":
                 print("Thanks for using OceanOps. Have a nice day!")
-                quit()
+                break
             password = getpass("Password: ")
             if users[username] == password:
                 print(f"Welcome, {username}")
                 print("#########################################")
                 myDash = DashboardDisplay()
                 myDash.run()
-            print("User not found. Please try again.\n")
+            else:
+                print("User not found. Please try again.\n")
 
 if __name__ == "__main__":
     myLogin = Login()
