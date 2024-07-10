@@ -2,26 +2,29 @@
 # This is the display for loading json files
 
 from os import listdir
-from json import dump, loads
+from json import dump, load
 # from global_info import b2b_accounts, b2b_orders, b2c_accounts, b2c_orders
 import global_info
 
 class fileLoader():
     def __init__(self, active=True):
-        self.loadables = {load_key: load_value for load_key, load_value in enumerate(listdir("./data"))}
+        self.loadables = {load_key: load_value for load_key, load_value in enumerate(listdir("../data"))}
         self.active = active
-        self.valid_files = self.loadables.values()
+        self.valid_files = list(self.loadables.values())
+    
+    def get_loadables(self):
+        return self.loadables
 
     def load(self, loadable):
         match loadable:
             case "b2b_accounts.json":
-                global_info.b2b_accounts = loads(loadable)
+                global_info.b2b_accounts = load(loadable)
             case "b2c_accounts.json":
-                global_info.b2c_accounts = loads(loadable)
+                global_info.b2c_accounts = load(loadable)
             case "b2b_orders.json":
-                global_info.b2b_orders = loads(loadable)
+                global_info.b2b_orders = load(loadable)
             case "b2c_orders.json":
-                global_info.b2c_orders = loads(loadable)
+                global_info.b2c_orders = load(loadable)
             case _:
                 raise Exception(f"Not a valid file. Only valid files are {self.valid_files}")
 
@@ -60,7 +63,3 @@ class fileLoader():
                 print(f"You have selected {self.loadables[selection]}")
             else:
                 print("Your selection was invalid. ")
-
-if __name__ == "__main__":
-    my_loader = fileLoader()
-    

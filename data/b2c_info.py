@@ -46,7 +46,7 @@ orders = {
         }
     },
     2.0: {
-        "account": "Amazon",
+        "account": 2,
         "invoice": {
             "items": {
                 "Roomba Robot Vacuum Cleaner": {
@@ -60,7 +60,7 @@ orders = {
         }
     },
     2.1: {
-        "account": "Amazon",
+        "account": 2,
         "invoice": {
             "items": {
                 "Roomba Robot Vacuum Cleaner": {
@@ -74,7 +74,7 @@ orders = {
         }
     },
     3.0: {
-        "account": "SUSE",
+        "account": 2,
         "invoice": {
             "items": {
                 "SLES Support Subscription": {
@@ -88,7 +88,7 @@ orders = {
         }
     },
     3.1: {
-        "account": "SUSE",
+        "account": 3,
         "invoice": {
             "items": {
                 "SLES Support Subscription": {
@@ -102,7 +102,7 @@ orders = {
         }
     },
     3.2: {
-        "account": "SUSE",
+        "account": 3,
         "invoice": {
             "items": {
                 "SLES Support Subscription": {
