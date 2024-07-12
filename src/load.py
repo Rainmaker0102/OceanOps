@@ -12,11 +12,13 @@ class fileLoader():
         self.loadables = {load_key: load_value for load_key, load_value in enumerate(listdir(self.data_dir))}
         self.active = active
         self.valid_files = list(self.loadables.values())
-    
+
     def get_loadables(self):
         return self.loadables
 
-    def load(self, loadable):
+    def global_load(self, loadable):
+        if loadable == None:
+            raise Exception("No file found")
         match loadable:
             case "b2b_accounts.json":
                 with open(self.data_dir+loadable, "r") as file:
@@ -33,7 +35,9 @@ class fileLoader():
             case _:
                 raise Exception(f"{loadable} is not a valid file. Only valid files are {self.valid_files}")
 
-    def dump(self, dumpable):
+    def global_dump(self, dumpable):
+        if dumpable == None:
+            raise Exception("No file found")
         match dumpable:
             case "b2b_accounts.json":
                 with open(self.data_dir+dumpable, "w") as file:
@@ -77,7 +81,7 @@ class fileLoader():
                                 print("Exiting the loader")
                                 break
                             case "L":
-                                self.load(selection)
+                                self.global_load(selection)
                                 print("Here's the effects of the load")
                                 print(f"B2B Accounts: {global_info.b2b_accounts}")
                                 print(f"B2B Orders: {global_info.b2b_orders}")
@@ -85,7 +89,7 @@ class fileLoader():
                                 print(f"B2C Orders: {global_info.b2c_orders}")
                                 lord = "Q"
                             case "D":
-                                self.dump(selection)
+                                self.global_dump(selection)
                                 print("Here's the effects of the dump")
                                 with open(self.data_dir + selection, "r") as file:
                                     data = load(file)
@@ -93,6 +97,6 @@ class fileLoader():
                                 lord = "Q"
                             case _:
                                 print("Invalid input. Please choose from the list of valid inputs")
-                    
+
                 else:
                     print("Your selection was invalid. ")

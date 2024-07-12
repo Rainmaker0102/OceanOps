@@ -6,7 +6,7 @@ from getpass import getpass
 
 # Project Imports
 from global_info import users
-from biz_dash import DashboardDisplay
+from biz_dash import dashboardDisplay
 
 class Login():
     def __init__(self, active=True):
@@ -21,13 +21,14 @@ class Login():
                 break
             password = getpass("Password: ")
             if username not in users.keys():
-                print("User was not found. Please try again.\n")
+                print("User was not found. Please try again.")
             elif users[username] != password:
-                print("Password incorrect. Please try again.\n")
+                print("Password incorrect. Please try again.")
             else:
                 print(f"Welcome, {username}")
                 print("#########################################")
-                myDash = DashboardDisplay()
+                print()
+                myDash = dashboardDisplay()
                 myDash.run()
 
 if __name__ == "__main__":

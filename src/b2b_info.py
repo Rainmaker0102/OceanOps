@@ -15,7 +15,7 @@ accounts = {
     3: {
         "name": "SUSE",
         "phone": "682-742-9152",
-        "email": "biz_relations@amazon.com",
+        "email": "biz_relations@suse.de",
     },
 }
 
