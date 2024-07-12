@@ -100,3 +100,7 @@ class fileLoader():
 
                 else:
                     print("Your selection was invalid. ")
+
+if __name__ == "__main__":
+    my_loader = fileLoader()
+    my_loader.run()
