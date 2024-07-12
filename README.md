@@ -13,6 +13,7 @@ Python based CLI business management tool with support loading data from JSON
 
 ## Improvements
 1. Secure passwords
-2. Implement the order manager
-3. Pretty up the UI with termcolor
-4. Curses?!?!
+2. User CRUD
+3. Implement the order manager
+4. Pretty up the UI with termcolor
+5. Curses?!?!
