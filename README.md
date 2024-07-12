@@ -12,6 +12,7 @@ Python based CLI business management tool with support loading data from JSON
 8. Inputting Q when it is an option takes you back to the previous module, until you exit the program.
 
 ## Improvements
-1. Implement the order manager
-2. Pretty up the UI with termcolor
+1. Secure passwords
+2. Implement the order manager
+3. Pretty up the UI with termcolor
 4. Curses?!?!
